@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e3f9e5, #c3f3c5); /* Light green gradient */
+    color: #333;
+    padding: 20px;
+}
+
+.header {
+    background-color: white; /* Header background */
+    color: #2e7d32; /* Dark green text color */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: #2e7d32; /* Logo color */
+}
+
+.sitename {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navmenu {
+    flex-grow: 1;
+}
+
+.navmenu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.navmenu li {
+    margin-left: 20px;
+}
+
+.navmenu a {
+    color: #2e7d32; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navmenu a:hover,
+.navmenu a.active {
+    color: #1b5e20; /* Darker green for hover/active */
+}
+
+.btn-getstarted {
+    background: linear-gradient(to right, #66bb6a, #43a047); /* Green gradient button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s; /* Added transform transition */
+    position: relative; /* Required for the pseudo-element */
+    overflow: hidden; /* Hide the pseudo-element overflow */
+}
+
+.btn-getstarted:hover {
+    background: linear-gradient(to right, #43a047, #388e3c); /* Darker green gradient on hover */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.btn-getstarted::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Make it larger than the button */
+    height: 300%; /* Make it larger than the button */
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    border-radius: 50%; /* Circle shape */
+    transition: all 0.4s ease; /* Transition for the overlay */
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+.btn-getstarted:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Scale up the overlay */
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #2e7d32; /* Heading color */
+}
+
+/* Search filter */
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #2e7d32; /* Green border */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#search-bar:focus {
+    border-color: #1b5e20; /* Darker green */
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
+}
+
+/* Difficulty filters */
+.difficulty-filters {
+    display: flex;
+    gap: 15px; /* Space between checkboxes */
+    align-items: center; /* Align items vertically */
+}
+
+/* Lesson list */
+.lesson-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lesson-item {
+    background: #d8f5e1; /* Light green background */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #2e7d32; /* Green border */
+}
+
+/* Lesson buttons */
+.lesson-button,
+#prev-button,
+#next-button,
+button {
+    background: linear-gradient(to right, #66bb6a, #43a047); /* Green gradient button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Animation on background and transform */
+    position: relative; /* Required for the pseudo-element */
+    overflow: hidden; /* Hide the pseudo-element overflow */
+}
+
+.lesson-button:hover,
+#prev-button:hover,
+#next-button:hover,
+button:hover {
+    background: linear-gradient(to right, #43a047, #388e3c); /* Darker green gradient on hover */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.lesson-button::after,
+#prev-button::after,
+#next-button::after,
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Make it larger than the button */
+    height: 300%; /* Make it larger than the button */
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    border-radius: 50%; /* Circle shape */
+    transition: all 0.4s ease; /* Transition for the overlay */
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+.lesson-button:hover::after,
+#prev-button:hover::after,
+#next-button:hover::after,
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Scale up the overlay */
+}
+
+/* Exercises and content */
+#exercises {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+#content {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+/* Completion screen */
+#completion-screen {
+    text-align: center;
+}
